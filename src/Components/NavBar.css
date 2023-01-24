@@ -1,0 +1,12 @@
+.container {
+    max-width: 1305px;
+   /* min-height: 500px;
+    
+    padding: 40px 30px 30px 30px;
+    
+    */
+    margin: 27px auto;
+    border-radius: 80px;
+    background-color: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
