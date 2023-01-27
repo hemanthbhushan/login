@@ -3,11 +3,13 @@ import  './LoginStyle.css';
 import {useFormik } from "formik";
 import * as Yup from "yup";
 import details from './details.json'
+import { Link } from 'react-router-dom';
 
 const LoginComponent = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [login,setLogin] = useState(false)
+    const [text,setText] = useState("");
 
 
 
@@ -21,18 +23,25 @@ const LoginComponent = () => {
             password: Yup.string().required("Required"),
         }),
         onSubmit: async (values, { resetForm }) => {
-           
-           setPassword(values.password);
-           setUserName(values.userName);
-           details?.map((val)=>{
-            console.log(val.userName,val.password,"chekkkk")
-            
-            if(val.userName=== userName && val.password===password){
-                        setLogin(true)
-                     }
-            console.log(val.userName === values.userName && val.password===values.password)
 
-        })
+          const check = details.find((val)=>{
+            return (val.userName=== values.userName && val.password===values.password)
+          })
+          if(check){
+            setText("Logged In")
+          }else{
+            setText("in valid userName or Pasword or Need to Signup")
+          }
+           
+        //    details?.map((val)=>{
+            
+        //     if(val.userName=== values.userName && val.password===values.password){
+        //                 setText("Logged In")
+        //                 console.log('checkkk', checkkk)
+        //              }else{
+        //               setText("in valid userName or Pasword or Need to Signup")
+        //              }
+        // })
         },
       });
     return (
@@ -71,22 +80,15 @@ const LoginComponent = () => {
             <button type="submit" className="btn mt-3">Login</button>
         </form>
         <div className="text-center fs-6">
-            <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+            <a href="#">Forget password?</a> or <Link to="/signup">Sign up</Link>
         </div>
 
         <div>
-            { 
-            login? <>
+           
               <div className="text-center mt-4 name">
-            Logged In
+           {text}
         </div>
-            </>:
-                //   <>
-                // <h3>check userName or password</h3>
-                //  </> 
-                 ""
-    
-            }
+           
         </div>
       
     </div>
