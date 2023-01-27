@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import  './LoginStyle.css';
-import { Formik, useFormik } from "formik";
+import {useFormik } from "formik";
 import * as Yup from "yup";
 import details from './details.json'
 
@@ -42,7 +42,7 @@ const LoginComponent = () => {
             <img src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-brands-logo-34.png" alt="" />
         </div>
         <div className="text-center mt-4 name">
-            Twitter
+            Spotify
         </div>
         
         <form className="p-3 mt-3" onSubmit={formik.handleSubmit}>
@@ -77,7 +77,9 @@ const LoginComponent = () => {
         <div>
             { 
             login? <>
-             <h3>Logged in</h3>
+              <div className="text-center mt-4 name">
+            Logged In
+        </div>
             </>:
                 //   <>
                 // <h3>check userName or password</h3>
