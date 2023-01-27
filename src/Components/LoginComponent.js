@@ -39,7 +39,7 @@ const LoginComponent = () => {
     <div className="wrapper">
         <div className="logo">
       
-            <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="" />
+            <img src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-brands-logo-34.png" alt="" />
         </div>
         <div className="text-center mt-4 name">
             Twitter

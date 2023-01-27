@@ -1,14 +1,14 @@
 import React from 'react'
 import NavBar from './Components/NavBar'
-import LoginCard from './Components/LoginCard'
 import LoginComponent from './Components/LoginComponent'
+import SignUpComponent from './Components/SignUpComponent'
 
 const App = () => {
   return (
     <div>
      <NavBar/>
-     <LoginCard/>
      <LoginComponent/>
+     <SignUpComponent/>
     </div>
   )
 }
